@@ -20,4 +20,38 @@ def evaluate_piece(weight, color, length):
     else:
         return "REPROVADA", reasons
 
+def add_piece():
+    id = input("ID da peça: ")
+    weight = float(input("Peso (g): "))
+    color = input("Cor: ")
+    length = float(input("Comprimento (cm): "))
+
+    status, reasons = evaluate_piece(weight, color, length)
+
+    piece = {
+        "id": id,
+        "weight": weight,
+        "color": color,
+        "length": length,
+        "status": status,
+        "reasons": reasons
+    }
+
+    pieces.append(piece)
+
+    if status == "APROVADA":
+        print("Peça APROVADA")
+
+        global current_box
+        current_box.append(piece)
+
+        if len(current_box) == 10:
+            boxes.append(current_box)
+            print("Caixa fechada com 10 peças!")
+            current_box = []
+
+    else:
+        print("Peça REPROVADA")
+        print("Motivos:", ", ".join(reasons))
+
 

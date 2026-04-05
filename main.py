@@ -80,3 +80,17 @@ def list_boxes():
 
     for i, box in enumerate(boxes, start=1):
         print(f"Caixa {i} com {len(box)} peças")
+
+def report():
+    aprovadas = sum(1 for p in pieces if p["status"] == "APROVADA")
+    reprovadas = [p for p in pieces if p["status"] == "REPROVADA"]
+
+    print("\n--- RELATÓRIO FINAL ---")
+    print(f"Total aprovadas: {aprovadas}")
+    print(f"Total reprovadas: {len(reprovadas)}")
+    print(f"Caixas utilizadas: {len(boxes)}")
+
+    if reprovadas:
+        print("\nDetalhes das reprovadas:")
+        for p in reprovadas:
+            print(f"ID: {p['id']} -> {', '.join(p['reasons'])}")

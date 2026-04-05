@@ -54,4 +54,11 @@ def add_piece():
         print("Peça REPROVADA")
         print("Motivos:", ", ".join(reasons))
 
+def list_pieces():
+    if not pieces:
+        print("Nenhuma peça cadastrada")
+        return
+
+    for p in pieces:
+        print(f"ID: {p['id']} | Status: {p['status']}")
 

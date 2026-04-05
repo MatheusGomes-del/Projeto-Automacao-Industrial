@@ -94,3 +94,32 @@ def report():
         print("\nDetalhes das reprovadas:")
         for p in reprovadas:
             print(f"ID: {p['id']} -> {', '.join(p['reasons'])}")
+ def menu():
+    while True:
+        print("\n1 - Cadastrar peça")
+        print("2 - Listar peças")
+        print("3 - Remover peça")
+        print("4 - Listar caixas fechadas")
+        print("5 - Gerar relatório")
+        print("0 - Sair")
+
+        op = input("Escolha: ")
+
+        if op == "1":
+            add_piece()
+        elif op == "2":
+            list_pieces()
+        elif op == "3":
+            remove_piece()
+        elif op == "4":
+            list_boxes()
+        elif op == "5":
+            report()
+        elif op == "0":
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida")
+
+
+menu()

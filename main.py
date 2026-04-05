@@ -94,7 +94,9 @@ def report():
         print("\nDetalhes das reprovadas:")
         for p in reprovadas:
             print(f"ID: {p['id']} -> {', '.join(p['reasons'])}")
- def menu():
+
+        
+def menu():
     while True:
         print("\n1 - Cadastrar peça")
         print("2 - Listar peças")

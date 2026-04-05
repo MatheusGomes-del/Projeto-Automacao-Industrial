@@ -54,6 +54,7 @@ def add_piece():
         print("Peça REPROVADA")
         print("Motivos:", ", ".join(reasons))
 
+
 def list_pieces():
     if not pieces:
         print("Nenhuma peça cadastrada")
@@ -62,3 +63,20 @@ def list_pieces():
     for p in pieces:
         print(f"ID: {p['id']} | Status: {p['status']}")
 
+
+def remove_piece():
+    id = input("ID da peça para remover: ")
+
+    global pieces
+    pieces = [p for p in pieces if p["id"] != id]
+
+    print("Peça removida (se existia)")
+
+
+def list_boxes():
+    if not boxes:
+        print("Nenhuma caixa fechada")
+        return
+
+    for i, box in enumerate(boxes, start=1):
+        print(f"Caixa {i} com {len(box)} peças")

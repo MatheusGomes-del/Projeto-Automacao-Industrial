@@ -43,4 +43,4 @@ O sistema permite cadastrar peças, avaliar automaticamente se estão dentro dos
 2. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+https://github.com/MatheusGomes-del/Projeto-Automacao-Industrial
